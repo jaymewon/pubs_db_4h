@@ -13,9 +13,9 @@ set :keep_releases, 5
 
 set :branch, "main"
 
-set :rbenv_ruby, File.read('.ruby-version').strip
-set :rbenv_path, "/home/#{fetch(:application)}/.rbenv"
-set :assets_roles, [:web, :app]
+#set :rbenv_ruby, File.read('.ruby-version').strip
+#set :rbenv_path, "/home/#{fetch(:application)}/.rbenv"
+#set :assets_roles, [:web, :app]
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
