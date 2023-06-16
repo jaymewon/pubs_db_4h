@@ -2,14 +2,20 @@
 lock "~> 3.17.3"
 
 set :application, "pubs_db_4h"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:jaymewon/pubs_db_4h.git"
 
 set :deploy_to, "/home/pubs_db_4h/#{fetch :application}"
 
 append :linked_files, "config/database.yml"
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 set :keep_releases, 5
+
+set :branch, "main"
+
+set :rbenv_ruby, File.read('.ruby-version').strip
+set :rbenv_path, "/home/#{fetch(:application)}/.rbenv"
+set :assets_roles, [:web, :app]
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
